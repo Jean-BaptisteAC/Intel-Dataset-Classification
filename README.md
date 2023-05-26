@@ -1,4 +1,4 @@
-# Intel-Dataset-Classification
+# Intel Classification Dataset
 In this project, we will tackle a classification problem using advanced Convolutional Neural Networks (CNN) and the Intel Image dataset, featuring 6 classes of color pictures in 150x150 pixels resolution.
 
 ## Using the code
