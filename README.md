@@ -5,6 +5,23 @@ In this project, we tackle a classification problem using advanced Convolutional
 You can use the jupyter version of the project with the file ```Advanced CNN.ipynb```.
 The dataset used in the code can be found on the kaggle website: https://www.kaggle.com/datasets/puneet6060/intel-image-classification
 
+## Presentation of the task
+
+The Intel classification dataset groups pictures from 6 different classes : 'mountain', 'street', 'glacier', 'buildings', 'sea' and 'forest'. Those pictures are in average in medium resolution of 150x150 pixels and RGB colors (compared to 28x28 pixels in black and white for the MNIST dataset).
+
+Mountain:
+
+![20107](https://github.com/Jean-BaptisteAC/Intel-Dataset-Classification/assets/66775006/3e33a508-ed13-4ed9-9c2b-cb91d3e2a231)
+
+Sea:
+
+![20168](https://github.com/Jean-BaptisteAC/Intel-Dataset-Classification/assets/66775006/4c866201-6716-4111-811e-208727963546)
+
+Street:
+
+![20066](https://github.com/Jean-BaptisteAC/Intel-Dataset-Classification/assets/66775006/4dea78a9-4754-4f22-bbf7-d41dc2a03a56)
+
+
 ## Importing data
 
 This part of the code handles the data loading from the specific folder in the user's computer. One needs to change the path at line 24 to be able to charge the data properly.
