@@ -70,45 +70,6 @@ The important points from this architecture are:
 
 For compilation of our model, we used the standard Adam optimizer, the categorical crossentropy loss function which is great for classification, and the accuracy metric for evaluation of our model. 
 
-```
-import tensorflow as tf
-from tensorflow import keras
-from keras import layers
-from keras.models import Sequential
-
-input_shape = (150, 150, 3)
-model = keras.Sequential(
-    [
-        
-        layers.Conv2D(32, 3, input_shape = input_shape, activation='relu', padding="same", strides=1),
-        layers.Conv2D(32, 3, activation='relu', padding="same", strides=1),
-        layers.MaxPool2D(pool_size=(2, 2), strides=2, padding='valid'),
-        
-        layers.Conv2D(64, 3, activation='relu', padding="same", strides=1),
-        layers.Conv2D(64, 3, activation='relu', padding="same", strides=1),
-        layers.MaxPool2D(pool_size=(2, 2), strides=2, padding='valid'),
-        
-        layers.Conv2D(128, 3, activation='relu', padding="same", strides=1),
-        layers.Conv2D(128, 3, activation='relu', padding="same", strides=1),
-        layers.MaxPool2D(pool_size=(2, 2), strides=2, padding='valid'),
-        
-        layers.Conv2D(64, 3, activation='relu', padding="same", strides=1),
-        layers.Conv2D(64, 3, activation='relu', padding="same", strides=1),
-        layers.MaxPool2D(pool_size=(2, 2), strides=2, padding='valid'),
-        
-        layers.Reshape([-1]),
-        layers.Dense(16, activation="relu"),
-        layers.Dense(6, activation="softmax"),
-    ]
-)
-model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3),
-              loss='categorical_crossentropy',
-              metrics='accuracy',
-                       )
-
-model.summary()
-```
-
 The summary of the model is then displayed thanks to the tensorflow method in order to visualize our achitecture.
 We have in total, around half a million parameters in our model.
 
@@ -158,8 +119,24 @@ Non-trainable params: 0
 _________________________________________________________________
 ````
 
-## Training
+## Results
+
+At the end of the training, we achieved around 96% accuracy on the train set, and around 0.81% accuracy on the test set, which is a good result for our model. 
+The time needed for total computation is rather small with around 1h for 10 epochs (our computer has 128Go RAM with a strong CPU, and we didn't use GPU acceleration).
 
 ```
-hist = model.fit(x=train_images, y=train_labels, epochs=4, batch_size=16, validation_data=(test_images, test_labels))
+...
+Epoch 10/10
+878/878 [==============================] - 429s 489ms/step - loss: 0.1132 - accuracy: 0.9608 - val_loss: 0.7838 - val_accuracy: 0.8070
 ```
+
+When looking at the confusion matrix below, we can see that there is no perticular class imbalance in our predictions. The most errors occur between the classes "Glacier" and "Mountain", which is expected as a mountain covered in snow is very close to a glacier, and between the classes "Street" and "Building" due to the similarity of artificial landscapes.
+
+![image](https://github.com/Jean-BaptisteAC/Intel-Dataset-Classification/assets/66775006/8ad4f74c-6f44-4f5e-afdf-2894eda92c95)
+
+
+
+## Conclusion
+
+The intel dataset is a rather heavy dataset to work on, and needed the implementation of a very deep CNN with around 14 layers in order to yield good results.
+This project was fun to make because the pictures used are highly detailed and could be pictures from one personal photos.
