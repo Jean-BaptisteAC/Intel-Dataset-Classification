@@ -1,5 +1,5 @@
 # Intel Classification Dataset
-In this project, we will tackle a classification problem using advanced Convolutional Neural Networks (CNN) and the Intel Image dataset, featuring 6 classes of color pictures in 150x150 pixels resolution.
+In this project, we tackle a classification problem using advanced Convolutional Neural Networks (CNN) and the Intel Image dataset, featuring 6 classes of color pictures in 150x150 pixels resolution.
 
 ## Using the code
 You can use the jupyter version of the project with the file ```Advanced CNN.ipynb```.
@@ -9,7 +9,7 @@ The dataset used in the code can be found on the kaggle website: https://www.kag
 
 This part of the code handles the data loading from the specific folder in the user's computer. One needs to change the path at line 24 to be able to charge the data properly.
 The data is retrieved from the train dataset and test dataset in order to provide testing at the end of the training process.
-For the rest of the project, we will be using tensorflow as the main library for neural network creation.
+For the rest of the project, we will be using ```tensorflow``` as the main library for neural network creation.
 
 ```
 import numpy as np
@@ -61,14 +61,16 @@ def load_data():
 
 ## Modeling
 
-For the creation of our CNN, we used different layers of convolutions, max pooling and dense layer for class prediction. We inspired ourselves from the VGG-architecture: Very Deep Convolutional Networks for Large-Scale Image Recognition (https://arxiv.org/abs/1409.1556).
+For the creation of our CNN, we used different layers of convolutions, max pooling and dense layer for class prediction. We inspired ourselves from the VGG-architecture and here is the link from the paper: 
 
-The important points from this architecture are:
-- The great number of convolution stacks, comprising convolutions layers with a small kernel.
+Very Deep Convolutional Networks for Large-Scale Image Recognition: (https://arxiv.org/abs/1409.1556)
+
+The most important points from this architecture are:
+- The great number of convolution stacks, comprising convolutions layers with a small (3x3) kernel .
 - A stride of 1 with padding set to 'same', in order to keep the same resolution between convolution layers.
-- Max Pooling layers with a size of (2,2).
+- Max Pooling layers with a size of (2x2).
 
-For compilation of our model, we used the standard Adam optimizer, the categorical cross-entropy loss function which is great for classification, and the accuracy metric for evaluation of our model. 
+For compilation of our model, we used the standard *Adam* optimizer, the *categorical cross-entropy* loss function which is great for classification, and the *accuracy* metric for evaluation of our model. 
 
 The summary of the model is then displayed thanks to the tensorflow method in order to visualize our architecture.
 We have, in total, around half a million parameters in our model.
@@ -121,7 +123,7 @@ _________________________________________________________________
 
 ## Results
 
-At the end of the training, we achieved around 96% accuracy on the train set, and around 0.81% accuracy on the test set, which is a good result for our model. 
+At the end of the training, we achieved around 96% accuracy on the train set, and around 81% accuracy on the test set, which is a good result for the classification task. 
 The time needed for total computation is rather small with around 1h for 10 epochs (our computer has 128Go RAM with a strong CPU, and we didn't use GPU acceleration).
 
 ![image](https://github.com/Jean-BaptisteAC/Intel-Dataset-Classification/assets/66775006/5f65ffe4-4eea-412b-9875-2f22d9f6b5e8)
@@ -133,4 +135,4 @@ When looking at the confusion matrix below, we can see that there is no particul
 ## Conclusion
 
 The intel dataset is a rather heavy dataset to work on, and needed the implementation of a very deep CNN with around 14 layers in order to yield good results.
-This project was fun to make because the pictures used are highly detailed and could be pictures from everyone's personal photos.
+Overall, this project was really fun to make because the pictures used are highly detailed and could be pictures from everyone's personal photos, adding to the significance of this classification task.
