@@ -1,5 +1,5 @@
 # Intel Classification Dataset
-In this project, we tackle a classification problem using advanced Convolutional Neural Networks (CNN) and the Intel Image dataset, featuring 6 classes of color pictures in 150x150 pixels resolution.
+
 
 ## Using the code
 You can use the jupyter version of the project with the file ```Advanced CNN.ipynb```.
@@ -7,6 +7,7 @@ The dataset used in the code can be found on the kaggle website: https://www.kag
 
 ## Presentation of the task
 
+In this project, we tackle a classification problem using advanced Convolutional Neural Networks (CNN) and the Intel Image dataset. 
 The Intel classification dataset groups pictures from 6 different classes : 'mountain', 'street', 'glacier', 'buildings', 'sea' and 'forest'. Those pictures are in average in medium resolution of 150x150 pixels and RGB colors (compared to 28x28 pixels in black and white for the MNIST dataset).
 
 Mountain:
