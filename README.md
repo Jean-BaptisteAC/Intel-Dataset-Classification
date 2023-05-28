@@ -147,7 +147,7 @@ The time needed for total computation is rather small with around 1h for 10 epoc
 
 When looking at the confusion matrix below, we can see that there is no particular class imbalance in our predictions. The most errors occur between the classes "Glacier" and "Mountain", which is expected as a mountain covered in snow is very close to a glacier, and between the classes "Street" and "Building" due to the similarity of artificial landscapes.
 
-![image](https://github.com/Jean-BaptisteAC/Intel-Dataset-Classification/assets/66775006/c398b431-5479-4391-87f1-70450ea9a3c5)
+![image](https://github.com/Jean-BaptisteAC/Intel-Dataset-Classification/assets/66775006/f318bf98-37a3-43f7-9410-cebeab968395)
 
 ## Conclusion
 
